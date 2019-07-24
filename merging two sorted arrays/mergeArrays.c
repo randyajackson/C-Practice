@@ -3,29 +3,52 @@
 
 int main(void)
 {
-    int p[4] = {4,18,56,99};
-    int q[5] = {1,9,80,200,220};
+    int pSize;
+    int qSize;
 
-    int r[9];
+    printf("Enter the size of array 1:");
+    scanf("%d", &pSize);
+
+    printf("Enter the size of array 2:");
+    scanf("%d", &qSize);
+
+    int p[pSize];
+    int q[qSize];
+
+    for(int i = 0; i < pSize; i++)
+    {
+        printf("Enter element %d in Array 1: ", i);
+        scanf("%d", &p[i]);
+        printf("\n");
+    }
+
+    for(int i = 0; i < qSize; i++)
+    {
+        printf("Enter element %d in Array 2: ", i);
+        scanf("%d", &q[i]);
+        printf("\n");
+    }
+
+    int r[pSize + qSize];
 
     int count = 0;
 
     int pCursor = 0;
     int qCursor = 0;
 
-    while( count < 9 )
+    while( count < (pSize + qSize) )
     {
-        if(qCursor > 4)
+        if(qCursor > (qSize - 1))
         {
-            for(int i = pCursor; i < 4; i++)
+            for(int i = pCursor; i < pSize; i++)
             {
                 r[count] = p[i];
                 count++;
             }
         }
-        else if(pCursor > 3)
+        else if(pCursor > (pSize - 1))
         {
-            for(int i = qCursor; i < 5; i++)
+            for(int i = qCursor; i < qSize; i++)
             {
                 r[count] = q[i];
                 count++;
@@ -50,7 +73,7 @@ int main(void)
          
     }
 
-    for(int i = 0; i < 9; i++)
+    for(int i = 0; i < (qSize + pSize); i++)
         printf("%d ", r[i]);
 
     scanf("%u");
