@@ -1,0 +1,14 @@
+A C program is said
+to be strictly conforming to Standard C if that program uses only the features of the language
+and library described in the Standard.
+
+Conforming implementations may provide extensions that do not change the meaning
+of any strictly conforming program. This allows implementations to add library routines
+and define their own #pragma directives, but not to introduce new reserved
+identifiers or change the operation of standard library functions.
+
+When a compiler calculates the compile-time value of a constant expression
+involving characters, it must use the target computer's encoding, not the more natural (to
+the compiler writer) source encoding.
+
+p. 26
