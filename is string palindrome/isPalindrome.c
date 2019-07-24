@@ -12,11 +12,10 @@ int main(void)
     scanf("%s", &str);
     printf("\n");
 
-    int strLength = 0;
+    int strLength;
     int i, j = 0;
 
-    for(i = 0; str[i] != '\0'; i++)
-        strLength++;
+    strLength = strlen(str);
 
     for(i = strLength - 1, j = 0; i >= 0; i--, j++)
     {
