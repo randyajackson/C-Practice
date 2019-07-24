@@ -7,36 +7,44 @@ int main(void)
 {
     //the last position in the string is fixed for the null character \0
    char str[150];
-   int vowels = 0;
-   int consonants = 0;
 
-   printf("Enter a sentence to count vowels and consonants: ");
+   printf("Enter a sentence to uppercase vowels: ");
    gets(str); // need to use gets for inputs that have spaces
 
-
+   int tempChar;
+   
    for(int i = 0; i < strlen(str); i++)
    {
        if(
            (char)str[i] == 'a' ||
-           (char)str[i] == 'A' ||
            (char)str[i] == 'e' ||
-           (char)str[i] == 'E' ||
            (char)str[i] == 'i' ||
-           (char)str[i] == 'I' ||
            (char)str[i] == 'o' ||
+           (char)str[i] == 'u' 
+       )
+       {
+           tempChar = (int)str[i];
+           tempChar = toupper(tempChar);
+
+           str[i] = (char)tempChar;
+       }
+
+       if(
+           (char)str[i] == 'A' ||
+           (char)str[i] == 'E' ||
+           (char)str[i] == 'I' ||
            (char)str[i] == 'O' ||
-           (char)str[i] == 'u' ||
            (char)str[i] == 'U' 
        )
-            vowels++;
-        else
-        {
-            if( isalpha((char)str[i]) )
-                consonants++;
-        }
+       {
+           tempChar = (int)str[i];
+           tempChar = tolower(tempChar);
+
+           str[i] = (char)tempChar;
+       }
    }
 
-   printf("Vowels: %d  Consonants: %d", vowels, consonants);
+   printf("%s", str);        
 
    scanf("%u");
 
