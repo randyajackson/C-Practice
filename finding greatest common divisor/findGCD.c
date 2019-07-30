@@ -4,8 +4,30 @@
 
 int gcd(int x, int y)
 {
-
-    return ;
+    if(x > y)
+    {
+        if(x % y != 0)
+        {
+            return gcd(y, x % y );
+        }
+        else
+        {
+            return y;
+        }
+        
+    }
+    else
+    {
+        if(y % x != 0)
+        {
+            return gcd(x, y % x);
+        } 
+        else
+        {
+            return x;
+        }
+           
+    }
 }
 
 int main(void)
@@ -18,5 +40,8 @@ int main(void)
 
     gcdResult = gcd(x, y);
     
+    printf("\nGCD: %d", gcdResult);
+
+    scanf("%u");
     return 0;
 }
