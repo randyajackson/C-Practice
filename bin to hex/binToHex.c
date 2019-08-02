@@ -64,7 +64,7 @@ int main(void)
 { 
     int binary;
     char *hex;
-
+    
     printf("Enter a binary number: ");
     scanf("%d", &binary);
 
