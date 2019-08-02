@@ -26,7 +26,8 @@ char * hexConversion(int binary)
         count++;
     }
 
-    char returnArray[count / 4];
+    //static char returnArray[count / 4];
+    static char returnArray[100];
 
     //building char string to return with hex conversion
     for(int i = 0; i < (count / 4); i++)
@@ -75,7 +76,7 @@ int main(void)
 
     for(int i = 0; i < sizeof(hex) / sizeof(char); i++)
     {
-        printf("%c", *(hex + i) );
+        printf("%c", hex[i] );
     }
 
     scanf("%u");
