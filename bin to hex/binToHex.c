@@ -39,7 +39,7 @@ char * hexConversion(int binary)
         tempResult = w + x + y + z;
 
         if(tempResult >= 0 && tempResult < 10)
-            returnArray[i] = tempResult;
+            returnArray[i] = tempResult + '0';
         else
         {
             if(tempResult == 10)
@@ -76,7 +76,7 @@ int main(void)
 
     for(int i = 0; i < sizeof(hex) / sizeof(char); i++)
     {
-        printf("%c", hex[i] );
+        printf("%c", *(hex + i) );
     }
 
     scanf("%u");
